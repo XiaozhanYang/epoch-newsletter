@@ -1,3 +1,3 @@
 # Epoch Time Newsletter in the UK
 
-A repository for the source code of Epoch Times Weekly newsletter campaign management in the UK.
+A repository for the source code to manage Epoch Times Weekly newsletter campaigns in the UK.

@@ -2,8 +2,9 @@
 import mailchimp_marketing as MailchimpMarketing
 from mailchimp_marketing.api_client import ApiClientError
 import json
+from .template_render import Jinja_Template
 
-__all__ = [MailChimp_Campaign]
+__all__ = ['MailChimp_Campaign']
 
 class MailChimp_Campaign(Jinja_Template):
 

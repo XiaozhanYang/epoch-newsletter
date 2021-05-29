@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-__all__ = [Article, Content]
+__all__ = ['Article', 'Content']
 
 class Article():
 

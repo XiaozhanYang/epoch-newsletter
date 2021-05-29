@@ -1,13 +1,14 @@
 # for rendering html template with Jinja
 from jinja2 import Environment, FileSystemLoader
 import os
+from .content_script import Content
 
 # for viewing the email draft in webpage
 import webbrowser
 from datetime import date
 
 
-__all__ = [Jinja_Template]
+__all__ = ['Jinja_Template']
 
 class Jinja_Template(Content):
 

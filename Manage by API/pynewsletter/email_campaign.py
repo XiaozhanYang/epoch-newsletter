@@ -3,8 +3,10 @@ import mailchimp_marketing as MailchimpMarketing
 from mailchimp_marketing.api_client import ApiClientError
 import json
 from .template_render import Jinja_Template
+from datetime import date
 
 __all__ = ['MailChimp_Campaign']
+
 
 class MailChimp_Campaign(Jinja_Template):
 
@@ -18,13 +20,13 @@ class MailChimp_Campaign(Jinja_Template):
         self.rendered_content = newsletter.rendered_content
         self.mailchimp_config = mailchimp_config
 
-        # sender information
+        # information of sender
         self.from_name = from_name
         self.reply_to = reply_to
 
         # campaign name
         today = date.today().strftime("%d %B %Y")
-        self.campaign_title = 'Campaign_Created_through_API' + today
+        self.campaign_title = 'Campaign_Created_through_API - ' + today
 
     def connect_to_MailChimp(self):
 

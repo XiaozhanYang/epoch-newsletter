@@ -34,7 +34,8 @@ class Jinja_Template(Content):
         self.rendered_content = self.template.render(env=self.env,
                                                    header=source_contect.article_list[0],
                                                    article_list=source_contect.article_list,
-                                                   video_pair_list=source_contect.video_pair_list)
+                                                   video_pair_list=source_contect.video_pair_list,
+                                                   advert=source_contect.advert)
 
         self.folder_path = '../' + folder_name + '/'
 

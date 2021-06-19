@@ -14,7 +14,8 @@ class Article():
         self._preview_text = preview_text
         self._tag = tag
         self._label = label
-        self._video_page_url = video_page_url.replace('/gb/', '/b5/')
+
+        self._video_page_url = video_page_url.replace('/gb/', '/b5/') if video_page_url else video_page_url
 
         page = requests.get(self._url)
         self._soup = BeautifulSoup(page.text, 'html.parser')
@@ -121,12 +122,18 @@ class Article():
 
 class Content(Article):
 
-    def __init__(self, article_url_list, video_url_list, video_page_url=None):
+    def __init__(self, article_url_list, video_url_list, video_page_url=None, advert=None):
 
         # parse data
+
+        # article info
         self.article_list = [Article(article_url, video_page_url=video_page_url) for article_url in article_url_list]
 
+        # video info
         self.video_list = [Article(video_url, video_page_url=video_page_url) for video_url in video_url_list]
         self.video_pair_list = [[value, self.video_list[counter+1]] for counter, value in enumerate(self.video_list) if counter%2 == 0]
+        
+        # advert info
+        self.advert = advert
 
 

@@ -87,6 +87,7 @@ class Article():
             article_preview_text = re.sub(r'\（大紀元[^)]*\報導）', '', article_preview_text)
             article_preview_text = re.sub(r'\(大紀元[^)]*\報導\)', '', article_preview_text)
             article_preview_text = re.sub(r'\（大纪元[^)]*\报导）', '', article_preview_text)
+            article_preview_text = re.sub(r'\(大紀元[^)]*\報導）', '', article_preview_text)
             self._preview_text = article_preview_text.strip()
             paragraph_index += 1
 
